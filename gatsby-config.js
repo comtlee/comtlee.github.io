@@ -12,13 +12,13 @@ module.exports = {
     title: `comt의 개발 블로그`,
     description: `개발과 관련된 모든 정보들을 기록해두는 블로그입니다.`,
     author: `comt`,
-    siteUrl: `https://comt-mix.github.io/`,
+    siteUrl: `https://comt-mix.github.io/blog`,
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: 'https://comt-mix.github.io/',
+        siteUrl: 'https://comt-mix.github.io/blog',
         stripQueryString: true,
       },
     },
