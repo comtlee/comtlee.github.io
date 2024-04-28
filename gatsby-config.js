@@ -12,18 +12,18 @@ module.exports = {
     title: `comt의 개발 블로그`,
     description: `개발과 관련된 모든 정보들을 기록해두는 블로그입니다.`,
     author: `comt`,
-    siteUrl: `https://comt-mix.github.io/`,
+    siteUrl: `https://comt-mix.github.io/blog/`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-canonical-urls',
+      resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: 'https://comt-mix.github.io/',
+        siteUrl: "https://comt-mix.github.io/blog/",
         stripQueryString: true,
       },
     },
     {
-      resolve: 'gatsby-plugin-typescript',
+      resolve: "gatsby-plugin-typescript",
       options: {
         isTSX: true,
         allExtensions: true,
@@ -49,9 +49,9 @@ module.exports = {
       resolve: `gatsby-plugin-sharp`,
       options: {
         defaults: {
-          formats: ['auto', 'webp'],
+          formats: ["auto", "webp"],
           quality: 100,
-          placeholder: 'blurred',
+          placeholder: "blurred",
         },
       },
     },
@@ -62,19 +62,19 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-smartypants',
+            resolve: "gatsby-remark-smartypants",
             options: {
-              dashes: 'oldschool',
+              dashes: "oldschool",
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
-              classPrefix: 'language-',
+              classPrefix: "language-",
             },
           },
           {
-            resolve: 'gatsby-remark-images',
+            resolve: "gatsby-remark-images",
             options: {
               maxWidth: 768,
               quality: 100,
@@ -82,24 +82,24 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-copy-linked-files',
+            resolve: "gatsby-remark-copy-linked-files",
             options: {},
           },
           {
-            resolve: 'gatsby-remark-external-links',
+            resolve: "gatsby-remark-external-links",
             options: {
-              target: '_blank',
-              rel: 'nofollow',
+              target: "_blank",
+              rel: "nofollow",
             },
           },
         ],
       },
     },
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],
