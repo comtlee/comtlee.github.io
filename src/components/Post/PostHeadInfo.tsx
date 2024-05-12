@@ -80,7 +80,6 @@ const PostData = styled.div`
 const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
   title,
   date,
-  categories,
 }) {
   const goBackPage = () => window.history.back();
 
@@ -91,7 +90,6 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(" / ")}</div>
         <div>{date}</div>
       </PostData>
     </PostHeadInfoWrapper>
