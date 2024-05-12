@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react';
-import styled from '@emotion/styled';
+import React, { FunctionComponent } from "react";
+import styled from "@emotion/styled";
 
 interface PostContentProps {
   html: string;
@@ -29,13 +29,13 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 
   hr + h1,
@@ -84,7 +84,7 @@ const MarkdownRenderer = styled.div`
   }
 
   // Adjust Code Style
-  pre[class*='language-'] {
+  pre[class*="language-"] {
     margin: 30px 0;
     padding: 15px;
     font-size: 15px;
@@ -95,8 +95,8 @@ const MarkdownRenderer = styled.div`
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code[class*="language-"],
+  pre[class*="language-"] {
     tab-size: 2;
   }
 

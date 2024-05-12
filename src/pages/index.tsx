@@ -1,13 +1,13 @@
-import React, { FunctionComponent, useMemo } from 'react';
-import styled from '@emotion/styled';
-import Template from 'components/Common/Template';
-import CategoryList, { CategoryListProps } from 'components/Main/CategoryList';
-import Introduction from 'components/Main/Introduction';
-import PostList from 'components/Main/PostList';
-import { graphql } from 'gatsby';
-import { IGatsbyImageData } from 'gatsby-plugin-image';
-import { PostListItemType } from 'types/PostItem.types';
-import queryString, { ParsedQuery } from 'query-string';
+import React, { FunctionComponent, useMemo } from "react";
+import styled from "@emotion/styled";
+import Template from "components/Common/Template";
+import CategoryList, { CategoryListProps } from "components/Main/CategoryList";
+import Introduction from "components/Main/Introduction";
+import PostList from "components/Main/PostList";
+import { graphql } from "gatsby";
+import { IGatsbyImageData } from "gatsby-plugin-image";
+import { PostListItemType } from "types/PostItem.types";
+import queryString, { ParsedQuery } from "query-string";
 
 type IndexPageProps = {
   location: {
@@ -33,12 +33,6 @@ type IndexPageProps = {
   };
 };
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-`;
-
 const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
   data: {
@@ -54,33 +48,33 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
 }) {
   const parsed: ParsedQuery<string> = queryString.parse(search);
   const selectedCategory: string =
-    typeof parsed.category !== 'string' || !parsed.category
-      ? 'All'
+    typeof parsed.category !== "string" || !parsed.category
+      ? "All"
       : parsed.category;
 
   const categoryList = useMemo(
     () =>
       edges.reduce(
         (
-          list: CategoryListProps['categoryList'],
+          list: CategoryListProps["categoryList"],
           {
             node: {
               frontmatter: { categories },
             },
-          }: PostListItemType,
+          }: PostListItemType
         ) => {
-          categories.forEach(category => {
+          categories.forEach((category) => {
             if (list[category] === undefined) list[category] = 1;
             else list[category]++;
           });
 
-          list['All']++;
+          list["All"]++;
 
           return list;
         },
-        { All: 0 },
+        { All: 0 }
       ),
-    [],
+    []
   );
   return (
     <Template

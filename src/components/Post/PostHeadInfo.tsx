@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react';
-import styled from '@emotion/styled';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import React, { FunctionComponent } from "react";
+import styled from "@emotion/styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export type PostHeadInfoProps = {
   title: string;
@@ -29,6 +29,7 @@ const PrevPageIcon = styled.div`
   place-items: center;
   width: 40px;
   height: 40px;
+  margin-bottom: 20px;
   border-radius: 50%;
   background: #ffffff;
   color: #000000;
@@ -90,7 +91,7 @@ const PostHeadInfo: FunctionComponent<PostHeadInfoProps> = function ({
       </PrevPageIcon>
       <Title>{title}</Title>
       <PostData>
-        <div>{categories.join(' / ')}</div>
+        <div>{categories.join(" / ")}</div>
         <div>{date}</div>
       </PostData>
     </PostHeadInfoWrapper>
