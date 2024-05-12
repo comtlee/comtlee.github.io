@@ -28,7 +28,6 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
       html,
       frontmatter: {
         title,
-        summary,
         date,
         categories,
         thumbnail: {
@@ -40,7 +39,7 @@ const PostTemplate: FunctionComponent<PostTemplateProps> = function ({
   } = edges[0];
 
   return (
-    <Template title={title} description={summary} url={href} image={publicURL}>
+    <Template title={title} url={href} image={publicURL}>
       <PostHead
         title={title}
         date={date}
@@ -62,7 +61,6 @@ export const queryMarkdownDataBySlug = graphql`
           html
           frontmatter {
             title
-            summary
             date(formatString: "YYYY.MM.DD.")
             categories
             thumbnail {

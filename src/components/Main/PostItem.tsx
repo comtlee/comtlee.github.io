@@ -1,8 +1,8 @@
-import React, { FunctionComponent } from 'react';
-import styled from '@emotion/styled';
-import { Link } from 'gatsby';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import { PostFrontmatterType } from 'types/PostItem.types';
+import React, { FunctionComponent } from "react";
+import styled from "@emotion/styled";
+import { Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { PostFrontmatterType } from "types/PostItem.types";
 
 type PostItemProps = PostFrontmatterType & { link: string };
 
@@ -68,24 +68,10 @@ const CategoryItem = styled.div`
   color: white;
 `;
 
-const Summary = styled.div`
-  display: -webkit-box;
-  overflow: hidden;
-  margin-top: auto;
-  text-overflow: ellipsis;
-  white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
-`;
-
 const PostItem: FunctionComponent<PostItemProps> = function ({
   title,
   date,
   categories,
-  summary,
   thumbnail: {
     childImageSharp: { gatsbyImageData },
   },
@@ -99,11 +85,10 @@ const PostItem: FunctionComponent<PostItemProps> = function ({
         <Title>{title}</Title>
         <Date>{date}</Date>
         <Category>
-          {categories.map(category => (
+          {categories.map((category) => (
             <CategoryItem key={category}>{category}</CategoryItem>
           ))}
         </Category>
-        <Summary>{summary}</Summary>
       </PostItemContent>
     </PostItemWrapper>
   );

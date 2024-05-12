@@ -1,5 +1,4 @@
 import React, { FunctionComponent, useMemo } from "react";
-import styled from "@emotion/styled";
 import Template from "components/Common/Template";
 import CategoryList, { CategoryListProps } from "components/Main/CategoryList";
 import Introduction from "components/Main/Introduction";
@@ -37,7 +36,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
   location: { search },
   data: {
     site: {
-      siteMetadata: { title, description, siteUrl },
+      siteMetadata: { title, siteUrl },
     },
     allMarkdownRemark: { edges },
     file: {
@@ -77,12 +76,7 @@ const IndexPage: FunctionComponent<IndexPageProps> = function ({
     []
   );
   return (
-    <Template
-      title={title}
-      description={description}
-      url={siteUrl}
-      image={publicURL}
-    >
+    <Template title={title} url={siteUrl} image={publicURL}>
       <Introduction profileImage={gatsbyImageData} />
       <CategoryList
         selectedCategory={selectedCategory}
@@ -115,7 +109,6 @@ export const getPostList = graphql`
           }
           frontmatter {
             title
-            summary
             date(formatString: "YYYY.MM.DD.")
             categories
             thumbnail {
