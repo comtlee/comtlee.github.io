@@ -1,13 +1,13 @@
-import React, { createRef, FunctionComponent, useEffect } from 'react';
-import styled from '@emotion/styled';
+import React, { createRef, FunctionComponent, useEffect } from "react";
+import styled from "@emotion/styled";
 
-const src = 'https://utteranc.es/client.js';
-const repo = 'comt-mix/comt.github.io/blog';
+const src = "https://utteranc.es/client.js";
+const repo = "comt-mix/blog";
 
 type UtterancesAttributesType = {
   src: string;
   repo: string;
-  'issue-term': string;
+  "issue-term": string;
   label: string;
   theme: string;
   crossorigin: string;
@@ -26,16 +26,16 @@ const CommentWidget: FunctionComponent = function () {
   useEffect(() => {
     if (element.current === null) return;
 
-    const utterances: HTMLScriptElement = document.createElement('script');
+    const utterances: HTMLScriptElement = document.createElement("script");
 
     const attributes: UtterancesAttributesType = {
       src,
       repo,
-      'issue-term': 'pathname',
-      label: 'Comment',
-      theme: `github-light`,
-      crossorigin: 'anonymous',
-      async: 'true',
+      "issue-term": "pathname",
+      label: "Comment",
+      theme: "github-light",
+      crossorigin: "anonymous",
+      async: "true",
     };
 
     Object.entries(attributes).forEach(([key, value]) => {

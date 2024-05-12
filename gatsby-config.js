@@ -8,11 +8,12 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/blog",
   siteMetadata: {
-    title: `comt의 개발 블로그`,
-    description: `개발과 관련된 모든 정보들을 기록해두는 블로그입니다.`,
-    author: `comt`,
-    siteUrl: `https://comt-mix.github.io/blog/`,
+    title: "comt의 개발 블로그",
+    description: "개발과 관련된 모든 정보들을 기록해두는 블로그입니다.",
+    author: "comt",
+    siteUrl: "https://comt-mix.github.io/blog/",
   },
   plugins: [
     {
@@ -29,36 +30,37 @@ module.exports = {
         allExtensions: true,
       },
     },
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-react-helmet",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `contents`,
-        path: `${__dirname}/contents`,
+        name: "contents",
+        path: `${__dirname}/contents/`,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `images`,
-        path: `${__dirname}/static`,
+        name: "static",
+        path: `${__dirname}/static/`,
       },
     },
+
     {
-      resolve: `gatsby-plugin-sharp`,
+      resolve: "gatsby-plugin-sharp",
       options: {
         defaults: {
-          formats: ["auto", "webp"],
+          formats: ["auto", "webp", "png"],
           quality: 100,
           placeholder: "blurred",
         },
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-image`,
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
