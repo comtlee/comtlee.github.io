@@ -8,18 +8,18 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/blog",
+  pathPrefix: "/",
   siteMetadata: {
     title: "comt의 개발 블로그",
     description: "개발과 관련된 모든 정보들을 기록해두는 블로그입니다.",
     author: "comt",
-    siteUrl: "https://comt-mix.github.io/blog/",
+    siteUrl: "https://comtlee.github.io/",
   },
   plugins: [
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "https://comt-mix.github.io/blog/",
+        siteUrl: "https://comtlee.github.io/",
         stripQueryString: true,
       },
     },
