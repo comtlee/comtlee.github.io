@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://comt-mix.github.io/blog/sitemap-index.xml
-Host: https://comt-mix.github.io
+Sitemap: https://comtlee.github.io/sitemap-index.xml
+Host: https://comtlee.github.io
